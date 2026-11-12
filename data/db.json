@@ -6,6 +6,13 @@
       "email": "alex.carter@example.com",
       "passwordHash": "$2b$10$YmvSfCVCf1m5AvEv8XaYGOzlIZTAzXfNzNNU5fDe7ESa0C83JG4ae",
       "createdAt": "2026-11-12T12:18:38.701Z"
+    },
+    {
+      "id": "usr_1794486889234_a0hv3",
+      "name": "Aishwarya",
+      "email": "aishw995@gmail.com",
+      "passwordHash": "$2b$10$t7yAMXvPL6LRfX5bhQqIcOkbMq33oMUMix9ni7wEXOFwI/avD2AtO",
+      "createdAt": "2026-11-12T12:34:49.234Z"
     }
   ],
   "profiles": [
@@ -74,6 +81,23 @@
       "resumeExtractedText": "Alex Carter - AI & Data Science Candidate. Strong in Python, Machine Learning, React, REST APIs, SQL, Data Structures. Experience with LLM integration, Scikit-Learn, and full-stack development.",
       "completionPercentage": 95,
       "updatedAt": "2026-11-12T12:18:38.701Z"
+    },
+    {
+      "userId": "usr_1794486889234_a0hv3",
+      "fullName": "Aishwarya",
+      "email": "aishw995@gmail.com",
+      "phone": "",
+      "college": "",
+      "qualification": "",
+      "department": "",
+      "graduationYear": "2026",
+      "technicalSkills": [],
+      "programmingLanguages": [],
+      "projects": [],
+      "internships": [],
+      "workExperience": [],
+      "completionPercentage": 20,
+      "updatedAt": "2026-11-12T12:34:49.237Z"
     }
   ],
   "interviews": [

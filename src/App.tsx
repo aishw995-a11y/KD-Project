@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
+import { getStoredToken } from './services/api';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Sidebar } from './components/Sidebar';
@@ -18,17 +19,47 @@ import { HistoryPage } from './pages/HistoryPage';
 import { AnalyticsPage } from './pages/AnalyticsPage';
 import { SettingsPage } from './pages/SettingsPage';
 
+function getInitialPage(): string {
+  if (typeof window !== 'undefined' && window.location.hash) {
+    const raw = window.location.hash.replace('#', '').trim();
+    if (raw) return raw;
+  }
+  return 'landing';
+}
+
 function AppContent() {
   const { user, isLoading } = useAuth();
-  const [currentPage, setCurrentPage] = useState<string>('landing');
+  const [currentPage, setCurrentPage] = useState<string>(getInitialPage());
   const [navigationParams, setNavigationParams] = useState<any>({});
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(false);
+
+  // Sync with browser URL hash
+  useEffect(() => {
+    const handleHashChange = () => {
+      const page = window.location.hash.replace('#', '').trim();
+      if (page) {
+        setCurrentPage(page);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const handleNavigate = (page: string, params: any = {}) => {
     setNavigationParams(params);
     setCurrentPage(page);
+    try {
+      window.location.hash = `#${page}`;
+    } catch {}
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // If user is logged in and navigates to login/register, route them to dashboard
+  useEffect(() => {
+    if (user && (currentPage === 'login' || currentPage === 'register')) {
+      handleNavigate('dashboard');
+    }
+  }, [user, currentPage]);
 
   if (isLoading) {
     return (
@@ -54,10 +85,11 @@ function AppContent() {
   ];
 
   const isProtected = protectedPages.includes(currentPage);
-  const activePage = isProtected && !user ? 'login' : currentPage;
+  const isAuthenticated = Boolean(user || getStoredToken());
+  const activePage = isProtected && !isAuthenticated ? 'login' : currentPage;
 
   // Pages with sidebar
-  const showSidebar = user && [
+  const showSidebar = isAuthenticated && [
     'dashboard',
     'profile',
     'interview-config',
@@ -115,7 +147,7 @@ function AppContent() {
       </div>
 
       {/* Footer on landing, login, register, and report pages */}
-      {(activePage === 'landing' || activePage === 'evaluation-report' || !user) && <Footer />}
+      {(activePage === 'landing' || activePage === 'evaluation-report' || !isAuthenticated) && <Footer />}
     </div>
   );
 }
