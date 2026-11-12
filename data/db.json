@@ -1,0 +1,137 @@
+{
+  "users": [
+    {
+      "id": "usr_demo_1001",
+      "name": "Alex Carter",
+      "email": "alex.carter@example.com",
+      "passwordHash": "$2b$10$YmvSfCVCf1m5AvEv8XaYGOzlIZTAzXfNzNNU5fDe7ESa0C83JG4ae",
+      "createdAt": "2026-11-12T12:18:38.701Z"
+    }
+  ],
+  "profiles": [
+    {
+      "userId": "usr_demo_1001",
+      "fullName": "Alex Carter",
+      "email": "alex.carter@example.com",
+      "phone": "+1 (555) 234-5678",
+      "dateOfBirth": "2002-05-18",
+      "college": "Apex Institute of Technology",
+      "qualification": "B.Tech in Artificial Intelligence & Data Science",
+      "department": "AI & Data Science",
+      "graduationYear": "2026",
+      "technicalSkills": [
+        "Python",
+        "Machine Learning",
+        "React.js",
+        "Node.js",
+        "SQL",
+        "FastAPI",
+        "Data Structures & Algorithms",
+        "PyTorch"
+      ],
+      "programmingLanguages": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "C++",
+        "SQL"
+      ],
+      "projects": [
+        {
+          "id": "proj_1",
+          "title": "Healthcare Predictive Diagnostic Assistant",
+          "description": "Built a predictive machine learning pipeline using Random Forest and XGBoost with 92% diagnostic accuracy deployed as a REST API.",
+          "technologies": [
+            "Python",
+            "Scikit-Learn",
+            "FastAPI",
+            "Docker"
+          ]
+        },
+        {
+          "id": "proj_2",
+          "title": "Full Stack Collaborative Workspace",
+          "description": "Developed an interactive dashboard with real-time websocket task synchronization and role-based permissions.",
+          "technologies": [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB"
+          ]
+        }
+      ],
+      "internships": [
+        {
+          "id": "exp_1",
+          "company": "Cognitive Insights Lab",
+          "role": "AI / ML Intern",
+          "duration": "June 2025 - August 2025 (3 months)",
+          "description": "Automated document processing pipelines and fine-tuned embeddings for knowledge retrieval, speeding up search by 40%."
+        }
+      ],
+      "workExperience": [],
+      "resumeFileName": "Alex_Carter_Resume.pdf",
+      "resumeExtractedText": "Alex Carter - AI & Data Science Candidate. Strong in Python, Machine Learning, React, REST APIs, SQL, Data Structures. Experience with LLM integration, Scikit-Learn, and full-stack development.",
+      "completionPercentage": 95,
+      "updatedAt": "2026-11-12T12:18:38.701Z"
+    }
+  ],
+  "interviews": [
+    {
+      "id": "int_1794485937180_bvqp",
+      "userId": "usr_demo_1001",
+      "jobRole": "Full Stack Developer",
+      "interviewType": "Technical Interview",
+      "experienceLevel": "Fresher",
+      "difficulty": "Medium",
+      "totalQuestions": 3,
+      "durationMinutes": 45,
+      "useResumePersonalization": true,
+      "status": "in-progress",
+      "createdAt": "2026-11-12T12:18:57.180Z",
+      "questions": [
+        {
+          "id": "q_1794485937180_1",
+          "questionNumber": 1,
+          "question": "Could you explain how memory management and garbage collection work in your preferred programming language?",
+          "category": "Technical",
+          "expectedKeyPoints": [
+            "Clear conceptual explanation",
+            "Real-world project example",
+            "Consideration of edge cases and trade-offs",
+            "Structured communication"
+          ],
+          "difficulty": "Medium"
+        },
+        {
+          "id": "q_1794485937180_2",
+          "questionNumber": 2,
+          "question": "How would you design a scalable system for caching frequently accessed user data? What trade-offs would you consider?",
+          "category": "Technical",
+          "expectedKeyPoints": [
+            "Clear conceptual explanation",
+            "Real-world project example",
+            "Consideration of edge cases and trade-offs",
+            "Structured communication"
+          ],
+          "difficulty": "Medium"
+        },
+        {
+          "id": "q_1794485937180_3",
+          "questionNumber": 3,
+          "question": "Can you explain the difference between synchronous and asynchronous execution, and how promises or event loops handle concurrency?",
+          "category": "Technical",
+          "expectedKeyPoints": [
+            "Clear conceptual explanation",
+            "Real-world project example",
+            "Consideration of edge cases and trade-offs",
+            "Structured communication"
+          ],
+          "difficulty": "Medium"
+        }
+      ],
+      "submittedAnswers": []
+    }
+  ],
+  "evaluations": []
+}

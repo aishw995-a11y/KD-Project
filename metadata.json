@@ -1,0 +1,6 @@
+{
+  "name": "AI Mock Interview and Evaluation System",
+  "description": "AI-powered interview preparation platform for college students, graduates, and job seekers with voice recognition, resume analysis, dynamic Gemini questions, and comprehensive evaluation reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
